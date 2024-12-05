@@ -23,6 +23,6 @@ public class WebhookController {
     @PostMapping
     public Mono<HttpStatus> handleWebhook(@RequestBody String payload) {
         return webhookService.processWebhook(payload)
-                .then(Mono.just(HttpStatus.OK));
+                .then(Mono.just(HttpStatus.CREATED));
     }
 }
